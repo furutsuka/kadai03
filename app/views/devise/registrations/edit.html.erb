@@ -1,0 +1,22 @@
+<div class="container">
+ <h1>ユーザー情報</h1>
+ <div>
+   <%= form_for(@user) do |f| %>
+     <div class="user-field">
+       <p>名前</p>
+       <p><%= f.text_field :name %></p>
+     </div>
+     <div class="user-field">
+       <p>紹介文</p>
+       <p><%= f.text_area :introduction %></p>
+     </div>
+      <div class="user-field">
+       <p>プロフィール画像</p>
+       <p><%= f.attachment_field :profile_image %></p>
+     </div>
+     <div>
+       <p><%= f.submit "保存" %></p>
+     </div>
+   <% end %>
+ </div>
+</div>

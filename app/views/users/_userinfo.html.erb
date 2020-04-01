@@ -1,0 +1,15 @@
+<h3>User info</h3>
+<table>
+  <tr>
+    <td><%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', class: "img-circle pull-left profile-img",fallback: "no_image.jpg"%></td>
+  </tr>
+  <tr>
+  　　  <td>name</td>
+    　<td><%= user.name %></td>
+  </tr>
+  <tr>
+  　　  <td>introduction</td>
+  　　<td><%= user.introduction %></td>
+  </tr>
+    </table>
+    <%= link_to "編集", edit_user_path(current_user), class: "btn btn-default glyphicon glyphicon-wrench" %>

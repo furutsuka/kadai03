@@ -1,0 +1,30 @@
+<%= form_for @book do |f| %>
+  <% if @book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @book.errors.count %>件のerrorが発生しました。</h2>
+      <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<h3>Editing Book</h3>
+<table>
+<tbody>
+<tr><td>title</td></tr>
+<tr><td><%= f.text_field :title %></td></tr>
+<tr><td>Body</td></tr>
+<tr><td><%= f.text_area :body %></td></tr>
+<tr><td><%= f.submit 'Update Book' %></td></tr>
+<tr>
+    <td>
+    <%= link_to "Show", book_path(@book.id) %>
+    <print>|</print>
+    <%= link_to "Back", books_path %>
+    </td>
+</tr>
+</tbody>
+</table>
+<% end %>

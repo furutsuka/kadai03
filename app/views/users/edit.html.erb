@@ -1,0 +1,31 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @user.errors.count %>件のerrorが発生しました。</h2>
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<h2>User info</h2>
+  <div class="field">
+    <p>Name</p>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+  </div>
+    <p>Image</p>
+  <div class="form-group has-icon user-edit">
+    <%= f.attachment_field :profile_image, placeholder: "Image", class: "user-edit-form" %>
+  </div>
+
+  <div class="field user-edit">
+    <p>Introduction</p>
+    <%= f.text_area :introduction, autofocus: true, autocomplete: "introduction" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update User" %>
+  </div>
+<% end %>
